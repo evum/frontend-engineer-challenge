@@ -19,7 +19,7 @@ const LoginPage: FC<ILoginPage> = ({onLoginUpdated}: ILoginPage) => {
 
 	useEffect(() => {
 		if (loginData?.data?.authenticate?.accessToken) { navigate('/'); }
-		if (onLoginUpdated) { onLoginUpdated(); }
+		if (loginData?.data?.authenticate?.accessToken && onLoginUpdated) { onLoginUpdated(); }
 	}, [loginData, onLoginUpdated, navigate]);
 
 	const onLoginClicked = () => {

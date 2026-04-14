@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
-const baseUrl = process.env.HOST_URL || 'http://localhost:8000';
 
 const queryStr = 'query Me { me { id email isActive createdAt } }';
+const baseUrl = import.meta.env.BASE_REQUEST_URL || 'http://localhost:8000';
 
 const checkAuth = async (token: string) => {
 	const body = {

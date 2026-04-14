@@ -2,7 +2,7 @@
 import { useMutation } from '@tanstack/react-query';
 
 const queryStr = 'mutation RequestPasswordReset($email: String!) { requestPasswordReset(input: { email: $email }) { ok deliveryMode resetUrlPreview } }';
-const baseUrl = process.env.HOST_URL || 'http://localhost:8000';
+const baseUrl = import.meta.env.BASE_REQUEST_URL || 'http://localhost:8000';
 
 const login = async (email: string) => {
 	const body = {

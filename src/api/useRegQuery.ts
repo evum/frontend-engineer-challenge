@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 
-const baseUrl = process.env.HOST_URL || 'http://localhost:8000';
 const queryStr = 'mutation Register($email: String!, $password: String!) { register(input: { email: $email, password: $password }) { id email } }';
+const baseUrl = import.meta.env.BASE_REQUEST_URL || 'http://localhost:8000';
 
 interface IProfileData {
 	password: string;

@@ -12,7 +12,10 @@ import './App.css';
 
 function App() {
   const {mutate: checkAuthMutate, data: authResult} = useCheckAuthorization();
-	const onLoginUpdated = () => checkAuthMutate(localStorage.getItem('token') || '');
+	const onLoginUpdated = () => {
+    const token = localStorage.getItem('token');
+    if (token) { checkAuthMutate(token); }
+  };
 
   useEffect(() => {
 		const token = localStorage.getItem('token');

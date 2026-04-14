@@ -1,8 +1,8 @@
 
 import { useMutation } from '@tanstack/react-query';
 
-const baseUrl = process.env.HOST_URL || 'http://localhost:8000';
 const queryStr = 'mutation ResetPassword($token: String!, $newPassword: String!) {  resetPassword(input: {token: $token, newPassword: $newPassword})}';
+const baseUrl = import.meta.env.BASE_REQUEST_URL || 'http://localhost:8000';
 
 interface IResetPassData {
 	newPassword: string,
