@@ -1,7 +1,6 @@
 import { useState, type FC } from 'react';
 import { IconButton, InputAdornment, TextField, type TextFieldProps } from '@mui/material';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Visibility } from '@mui/icons-material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 const PasswordInput: FC<TextFieldProps> = ({...props}: TextFieldProps) => {
 	const [showPassword, setShowPassword] = useState(false);
