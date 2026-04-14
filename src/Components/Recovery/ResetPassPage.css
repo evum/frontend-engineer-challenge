@@ -1,0 +1,31 @@
+button.o-rpp-set-pass-btn {
+	width: 100%;
+	margin-top: 32px;
+	text-transform: none;
+}
+
+div.o-rpp-pass-input {
+	display: flex;
+    width: 100%;
+	margin-top: 24px;
+}
+
+button.o-rpp-secondary-btn {
+	width: 100%;
+	text-transform: none;
+	font-family: 'Inter';
+	font-weight: 500;
+	font-size: 14px;
+	color: #31A0F0;
+	background-color: #31A0F01A;
+}
+
+button.o-rpp-retry-btn {
+	display: flex;
+	text-transform: none;
+	font-family: 'Inter';
+	font-weight: 500;
+	font-size: 14px;
+	color: #31A0F0;
+	margin: 16px auto;
+}

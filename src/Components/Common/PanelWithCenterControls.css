@@ -1,0 +1,24 @@
+div.o-center-container {
+	margin: auto;
+	width: 100%;
+    max-width: 480px;
+    position: relative;
+    transform: translate(0, -50%);
+    top: calc(50% - 36px);
+}
+
+p.o-subtitle {
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 14px;
+	color: #81869A;
+	margin-bottom: 24px;
+}
+
+div.o-title {
+	font-family: 'Inter';
+	font-weight: 500;
+	font-size: 32px;
+	color: #1F1F27;
+	margin-bottom: 24px;
+}

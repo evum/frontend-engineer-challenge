@@ -1,0 +1,26 @@
+button.o-rp-recovery-pass-btn, button.o-rp-recovery-pass-btn:hover {
+	width: 100%;
+	margin-top: 32px;
+	color: #31A0F0;
+	text-transform: none;
+	background-color: #31A0F01A;
+	box-shadow: none;
+}
+
+div.o-rp-email-input {
+	width: 100%;
+}
+
+div.o-rp-back-icon {
+	height: 24px;
+	width: 24px;
+	background-image: url('../../assets/back-arrow.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-right: 7px;
+}
+
+.o-rp-recovery-title {
+	cursor: pointer;
+}

@@ -1,116 +1,75 @@
-# Advanced Frontend Engineer Challenge
+# React + TypeScript + Vite
 
-Искренне благодарим вас за время и внимание к этому челленджу и надеемся на долгосрочную совместную командную работу
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Подписывайтесь на канал с новыми челленджами: [@atls_challenges](https://t.me/atls_challenges)
+Currently, two official plugins are available:
 
-Не забудьте сперва поставить Star. Спасибо!
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-Этот репозиторий — инженерный челлендж для кандидатов на frontend позиции
+## React Compiler
 
-Задача узкая по продукту и широкая по инженерным решениям: нам важно увидеть не только верстку, а умение проектировать клиентскую часть под реальный backend
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-## Контекст
+Note: This will impact Vite dev & build performances.
 
-Вам нужно взять любой понравившийся fork [backend/fullstack-челленджа](https://github.com/atls-academy/engineer-challenge) и реализовать под него frontend для 3 сценариев:
-1. Регистрация
-2. Авторизация
-3. Восстановление пароля
+## Expanding the ESLint configuration
 
-Дизайн остается тем же: [Figma-файл Orbitto Service](https://www.figma.com/design/31KetUbya482vMSGgyiNIf/Orbitto-%7C-Service--Copy-?node-id=102-12806&t=TMlkJ3c3j3vJF5fb-4)
-Файл доступен для создания копии в ваш workspace, но права на редактирование исходного файла не выдаются
-Запросы на доступ к редактированию исходного файла не рассматриваются
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Что важно
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-Решение должно демонстрировать инженерную зрелость:
-- Декомпозиция интерфейса и переиспользуемость компонентов
-- Управление состоянием и асинхронными сценариями
-- Работа с контрактами backend (ошибки, edge-cases, нестабильные ответы)
-- Доступность (a11y), UX-состояния и производительность
-- Осознанная аргументация trade-offs
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-`Просто сверстать макет` не считается целевым уровнем решения для этого челленджа
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-## Обязательные требования
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-1. UI и UX
-- Реализуйте все экраны и состояния auth-флоу по дизайну
-- Обработайте loading/error/empty/success-состояния
-- Обеспечьте адаптивность минимум для desktop и mobile
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-2. Интеграция с backend
-- Подключитесь к выбранному fork и его контрактам
-- Обработайте реальные ответы сервиса, включая неуспешные сценарии
-- Зафиксируйте в README предположения по контрактам
-
-3. Архитектура frontend
-- Покажите структуру слоев/модулей и границы ответственности
-- Избегайте проекта в формате `все в одном components/ и services/`
-- Опишите ключевые инженерные решения в README
-
-4. Качество и надежность
-- Добавьте тесты критичных пользовательских сценариев (unit/integration/e2e — на ваш выбор)
-- Добавьте базовую защиту от типичных UX-проблем (повторные отправки, race conditions, устаревшие запросы)
-
-5. Технологические решения
-- Фреймворк и стек выбираете самостоятельно
-- Ограничений по стеку нет: React, Vue, Angular, Svelte, WASM и любые другие варианты
-- В README обязательно объясните выбор и альтернативы, которые рассматривали
-
-## Ограничения и анти-паттерны
-
-Следующие подходы считаются слабым решением:
-- Визуальный клон без инженерной структуры
-- Игнорирование неуспешных ответов и ошибок backend
-- Локальные хаки без объяснения trade-offs и последствий
-- Полная завязка на конкретный фреймворк без аргументации
-
-## Что нужно сдать
-
-1. Исходный код frontend в вашем fork
-2. Обновленный README в вашем fork с:
-- как запустить проект
-- явной ссылкой на выбранный backend fork
-- как устроена архитектура frontend
-- какие trade-offs были приняты
-- что бы вы сделали следующим шагом в production-версии
-- ссылкой на демо или скринкаст основных сценариев (если есть)
-3. Набор тестов и инструкции по запуску
-
-## Формат выполнения
-
-1. Выберите backend fork, с которым хотите работать
-2. Сделайте fork этого репозитория
-3. Реализуйте frontend-решение под выбранный backend
-4. Оформите результат в README
-5. Отправьте в отклике:
-- ссылку на ваш frontend fork
-- ссылку на `moodboard`
-- ссылку на `anti-moodboard`
-
-## Использование ИИ
-
-- Использование ИИ-инструментов в рамках челленджа разрешено
-- Если используете ИИ, добавьте в ваш fork папку `.agents`, чтобы было видно, как вы строили процесс решения
-
-## Критерии оценки
-
-1. Качество архитектуры frontend и управляемость кода
-2. Корректность auth-флоу и интеграции с backend
-3. Качество UX-состояний, обработки ошибок и адаптивности
-4. Тестируемость и надежность ключевых сценариев
-5. Ясность инженерной аргументации в README
-
-## Бонусные сигналы
-
-- Продуманная мини-дизайн-система или слой UI-kit внутри решения
-- Стратегия типизации контрактов (например, codegen/typed clients)
-- Базовая наблюдаемость фронта (telemetry/error tracking) с аргументацией, где это уместно
-- Использование микрофронтов, если это уместно и инженерно оправдано
-- Использование FSD с аргументацией границ и композиции слоев
-- Следование SOLID в архитектуре клиентской части
-
-## Важно
-
-Нас интересует не идеальный пиксель-перфект любой ценой, а качество инженерного мышления и способность строить устойчивый frontend под реальный backend
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```

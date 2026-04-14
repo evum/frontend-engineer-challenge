@@ -1,0 +1,36 @@
+.o-background-panel-container {
+	display: grid;
+	grid-template-columns: 35% auto;
+	height: 100%;
+}
+
+@media (max-width: 768px) {
+  	.o-background-image {
+    	display: none;
+  	}
+	.o-background-panel-container {
+		display: flex;
+	}
+}
+
+.o-background-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url('../../assets/background-image.png');
+}
+
+.o-inputs-container {
+	width: 100%;
+	display: grid;
+	grid-template-rows: 56px auto 78px;
+}
+
+.o-inputs {
+	margin: auto;
+	width: 100%;
+}
+
+div.o-footer-container {
+	padding: 24px;
+    border-top: 1px solid #1F1F2714;
+}

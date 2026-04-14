@@ -1,0 +1,48 @@
+p.o-rp-reg-header {
+	font-family: 'Inter';
+	width: fit-content;
+    margin: auto;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 120%;
+	vertical-align: middle;
+}
+
+div.o-rp-input {
+	display: flex;
+    margin: 24px auto 0px auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+button.o-rp-reg-btn {
+	display: flex;
+	margin: 32px auto;
+	max-width: 400px;
+	width: 100%;
+	text-transform: none;
+}
+
+p.o-rp-login {
+	margin: auto auto;
+	width: fit-content;
+	color: #81869A;
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.o-rp-login > button {
+	text-transform: none;
+}
+
+p.o-rp-conditions, p.o-rp-conditions > a {
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 12px;
+	color: #C0C2CB;
+	width: 100%;
+	max-width: 400px;
+	text-align: center;
+	margin: auto;
+}

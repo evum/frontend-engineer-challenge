@@ -1,0 +1,44 @@
+p.o-lp-login-header {
+	font-family: 'Inter';
+	width: fit-content;
+    margin: auto;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 120%;
+	vertical-align: middle;
+}
+
+div.o-lp-input {
+	display: flex;
+    margin: 24px auto 0px auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+button.o-lp-login-btn {
+	display: flex;
+	margin: 32px auto;
+	max-width: 400px;
+	width: 100%;
+	text-transform: none;
+}
+
+button.o-lp-pass-forgot-btn {
+	display: flex;
+	margin: 0px auto;
+	text-transform: none;
+}
+
+p.o-lp-registration {
+	margin: auto auto;
+	width: fit-content;
+	color: #81869A;
+	font-family: 'Inter';
+	font-weight: 400;
+	font-style: 'Regular';
+	font-size: 14px;
+}
+
+.o-lp-registration > button {
+	text-transform: none;
+}

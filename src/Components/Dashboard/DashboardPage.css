@@ -1,0 +1,6 @@
+.o-dashboard {
+	background-image: url('../../assets/dasboard.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100%;
+}
