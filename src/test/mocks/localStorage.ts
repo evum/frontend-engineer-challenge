@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 const localStorageMock = (() => {
   let store: Record<string, string> = {};
   return {
